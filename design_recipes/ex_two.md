@@ -11,17 +11,17 @@ _Include the name of the function, its parameters, return value, and side effect
 ```python
 # EXAMPLE
 
-def extract_uppercase(mixed_words):
-    """Extracts uppercase words from a string
+def check_grammar(text):
+    """Checks text starts with a capital letter and ends with one of these {'.', '?', '!'}
 
     Parameters: (list all parameters and their types)
-        mixed_words: a string containing words (e.g. "hello WORLD")
+        text: a string of text to assess
 
     Returns: (state the return value and its type)
-        a list of strings, each one a word (e.g. ["WORLD"])
+        True or False
 
     Side effects: (state any side effects)
-        This function doesn't print anything or have any other side-effects
+        No side effects
     """
     pass # Test-driving means _not_ writing any code here yet.
 ```
@@ -34,46 +34,34 @@ _Make a list of examples of what the function will take and return._
 # EXAMPLE
 
 """
-Given a lower and an uppercase word
-It returns a list with the uppercase word
-"""
-extract_uppercase("hello WORLD") => ["WORLD"]
-
-"""
-Given two uppercase words
-It returns a list with both words
-"""
-extract_uppercase("HELLO WORLD") => ["HELLO", "WORLD"]
-
-"""
-Given two lowercase words
-It returns an empty list
-"""
-extract_uppercase("hello world") => []
-
-"""
-Given a lower and a mixed case word
-It returns an empty list
-"""
-extract_uppercase("hello WoRLD") => []
-
-"""
-Given a lowercase word and an uppercase word with an exclamation mark
-It returns a list with the uppercase word, no exclamation mark
-"""
-extract_uppercase("hello WORLD!") => ["WORLD"]
-
-"""
-Given an empty string
-It returns an empty list
-"""
-extract_uppercase("") => []
-
-"""
 Given a None value
 It throws an error
 """
-extract_uppercase(None) throws an error
+check_grammar(None) throws an error
+
+"""
+Given a valid string
+Returns True
+"""
+check_grammar('Hello.') => True
+
+"""
+Give string without capital first
+Returns False
+"""
+check_grammar('hello.') => False
+
+"""
+Given a string without the correct ending punctution
+Returns False
+"""
+check_grammar('Hello') => False
+
+"""
+Given a string without the correct ending punctution or capital letter at start
+Returns False
+"""
+check_grammar('hello') => False
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
