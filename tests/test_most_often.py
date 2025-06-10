@@ -1,7 +1,6 @@
 import pytest
 from lib.most_often import *
 
-
 def test_initialisation():
     most_often = MostOften([])
     assert isinstance(most_often, MostOften)
